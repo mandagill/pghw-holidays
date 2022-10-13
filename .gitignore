@@ -1,3 +1,4 @@
 *.apps.googleusercontent.com.json
 .env
 .sh
+__pycache__
