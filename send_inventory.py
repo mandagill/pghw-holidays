@@ -49,11 +49,11 @@ def prepare_payload(artist, query_parameters):
 
 
 
-def send_to_airtable(data):
+def send_to_airtable(table_name, data):
   """Takes a dictionary and sends it to Airtable, returns a status code from Airtable API"""
 
   at = airtable.Airtable(environ.get("BASE_ID"), environ.get("AIRTABLE_KEY"))
 
-  return at.create('Inventory', data)
+  return at.create(table_name, data)
   
 
