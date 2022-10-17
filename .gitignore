@@ -2,5 +2,6 @@
 .env
 *.sh
 __pycache__
-*/__init__
+artist/__init__
+inventory/__init__
 ./package
