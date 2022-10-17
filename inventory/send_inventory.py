@@ -1,7 +1,7 @@
 import json
 import logging
 import re
-import airtable
+from package import airtable
 
 from os import environ
 from pprint import pprint
@@ -46,9 +46,6 @@ def prepare_payload(artist, query_parameters):
   return payload_dictionary
     
     
-
-
-
 def send_to_airtable(table_name, data):
   """Takes a dictionary and sends it to Airtable, returns a status code from Airtable API"""
 

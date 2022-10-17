@@ -1,6 +1,9 @@
-from send_inventory import send_to_airtable
+from artist import send_to_airtable
 from pprint import pprint
 import random
+
+import sys
+sys.path.append("./../artist")
 
 RANDOM_ARTISTS = ['', 'Artimesia Gentileschi', 'Judith Leyster', 'Edmonia Lewis', 'Frida Kahlo', 'Eva Hesse', '']
 
