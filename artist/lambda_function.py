@@ -1,5 +1,5 @@
 import json
-from package import airtable
+from python import airtable
 import logging
 import random
 
@@ -22,19 +22,21 @@ def send_to_airtable(artist_name, email):
 
 
 def lambda_handler(event, context):
-    status_code = 200
-    response_to_webhook = 'an attempt was made to send data to the spreadsheet'
+    status_code = 502
+    response_to_webhook = "The data from Gravity Forms was not handled as expected"
+    
+    pprint(f"this is the full event: {event}")
 
-    name = event['Name']
-    email = event['email'] 
+    name = event["Name"]
+    email = event["Email"] 
 
     try:
+      status_code = 200
       response = send_to_airtable(name, email)
-      if response is not None:
-        status_code = 502
-        logging.critical(f"A non-None response was returned from Airtable: {pprint(response)}")
+      response_to_webhook = 'Artist ID was sent to the spreadsheet'
+      logging.info(f"Record ID was created in Airtable: {pprint(response['id'])}")
     except:
-      status_code = 502
+      pass
 
     return {
         'statusCode': status_code,
