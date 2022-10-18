@@ -14,7 +14,7 @@ def send_to_airtable(artist_name, email):
   
   data = {
     'Vendor ID number': random.randrange(10000, 99999),
-    'Name': f"{artist_name}",
+    'Name': artist_name,
     'Email': email
   }
   logging.info(f"Artist {artist_name} has been assigned id number {data['Vendor ID number']}")
