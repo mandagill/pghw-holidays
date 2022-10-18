@@ -5,3 +5,5 @@ __pycache__
 artist/__init__
 inventory/__init__
 package/
+python/
+builds/
